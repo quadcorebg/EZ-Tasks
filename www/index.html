@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *" />
+     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-CuOF+2SnTUfTwSZjCXf01h7uYhfOBuxIhGKPbfEJ3+FqH/s6cIFN9bGr1HmAg4fQ" crossorigin="anonymous">
+  </head>
+<body data="no-login">
+    <button onclick="ai()">CL</button>
+    <button onclick="btn()">Db</button>
+    <button onclick="registerNewUser()">ga</button>
+    <header class="masthead text-center text-white vh-100">
+        <div class="masthead-content">
+            <div class="container"><img src="img/logo.png" width="150px" height="150px">
+                <h1 class="masthead-heading mb-0">EZ Tasks</h1>
+                <h2 class="masthead-subheading mb-0">Organize your day!</h2>
+                <a class="btn btn-light btn-xl rounded-pill mt-5 text-dark" role="button" href="#learn-more">Learn More</a>
+            </div>
+        </div>
+        <div class="bg-circle-1 bg-circle"></div>
+        <div class="bg-circle-2 bg-circle"></div>
+        <div class="bg-circle-3 bg-circle"></div>
+        <div class="bg-circle-4 bg-circle"></div>
+    </header>
+    <section id="learn-more">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="p-5"><img class="rounded-circle img-fluid" src="img/1.jpg"></div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="p-4">
+                        <h2 class="display-5">For those who want to organize their tasks...</h2>
+                        <p>Are you a person who keeps forgetting your tasks? Or you are a professional who wants to stay organized.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="p-5"><img class="rounded-circle img-fluid" src="img/2.jpg"></div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="p-4">
+                        <h2 class="display-5">We have a solution for you!</h2>
+                        <p>Register a new account and start using our application to achieve your goals faster!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="p-4 d-flex justify-content-center align-items-center flex-column">
+               <a class="btn btn-primary btn-xl rounded-pill mt-2 px-5" role="button" href="register.html">Sign Up</a>
+               <a class="mt-3" href="login.html">I have an account</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-2 mt-5">
+        <div class="container text-center">
+            <p>EZ Tasks ©. All rights reserved</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-popRpmFF9JQgExhfw5tZT4I9/CI5e2QcuUZPOVXb1m7qUmeR2b50u+YFEYe1wgzy" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/database.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+</body>
+
+</html>
