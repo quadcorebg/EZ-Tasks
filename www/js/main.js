@@ -7,13 +7,21 @@ $( document ).ready(function(){
 		window.location='summary.html';
 	}
 
-	var tasks = ['123','521','911'];
+	var tasks = getAllTasks();
 
 	for(var t of tasks) {
 		var temp = taskDOM.clone();
 		temp.find('#title').text(t);
 		temp.find('#desc').text(t);
 		temp.find('#datetime').text(t);
+		temp.find('.btn-primary').click(() => {
+
+		});
+		temp.find('.btn-success').click(() => {
+			if(confirm('Are you sure you want to mark this task as finished')) {
+				
+			}
+		});
 		$('.tasks-field').append(temp);
 	}
 });
@@ -24,6 +32,7 @@ $('.task button').click(() => {
 	var date = new Date($('.task').find('input[name="date"]').val()).toLocaleString();
 	addNewTask(taskName,taskDescription,date);
 });
+
 
 var taskDOM = $(`<div class="card-body">
             <h4 class="card-title" id="title"></h4>

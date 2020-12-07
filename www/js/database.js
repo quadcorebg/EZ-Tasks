@@ -31,13 +31,17 @@ document.addEventListener("deviceready", onDeviceReady, false);
         }, errorCB);
     }
 
-    // Query the success callback
-    //
-    function querySuccess(tx, results) {
+
+    function getAllTasks(tx) {
+        var userID = window.localStorage.getItem('userID');
+        tx.executeSql('SELECT * FROM TASKS WHERE userID = ' + userID, [], tasksQuery, errorCB);
+    }
+
+    function tasksQuery(tx, results) {
         var len = results.rows.length;
-        //alert("USERS table: " + len + " rows found.");
+        var tasks = [];
         for (var i=0; i<len; i++){
-            console.log("Row = " + i + " ID = " + results.rows.item(i).id + " Data =  " + results.rows.item(i).email);
+            tasks.push({name:results.rows.item(i).taskName, desc:results.rows.item(i).taskDesc, date: results.rows.item(i).date);
         }
     }
 
@@ -95,28 +99,15 @@ document.addEventListener("deviceready", onDeviceReady, false);
         window.localStorage.setItem("userEmail", email);
     }
 
-    // Transaction error callback
-    //
     function errorCB(err) {
         alert("Error processing SQL: "+err.code);
     }
 
-    // Transaction success callback
-    //
-    function successCB() {
-        var db = getDB();
-        db.transaction(queryDB, errorCB);
-    }
 
-    // PhoneGap is ready
-    //
-    function onDeviceReady() {
-        var db = getDB();
-        //db.transaction(populateDB, errorCB, successCB);
-    }
 
 function ai(){
-    window.localStorage.setItem("key", {name:'test'});
-    var val = window.localStorage.getItem("key") || 0;
-    alert(val.name);
+    window.localStorage.setItem("userID", 0);
+    window.localStorage.setItem("userEmail", null);
+    var db = getDB();
+        db.transaction(queryDB, errorCB);
 }

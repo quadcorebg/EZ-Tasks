@@ -19,14 +19,34 @@
 
 <body data="no-login">
     <div class="login-clean vh-100">
+        <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+        
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Error</h4>
+            </div>
+            <div class="modal-body">
+                <p>This email is linked to an existing account.</p>
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-primary btn-block my-1 mt-2 w-100" type="submit" onclick="registerNewUser()">Close</a>
+            </div>
+          </div>
+          
+        </div>
+  </div>
         <form method="post" id="registerForm">
             <h2 class="sr-only">Login Form</h2>
             <h2 class="text-center mb-5">Sign up</h2>
-            <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
-            <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
+            <div class="form-group mb-2">
+                <i class="d-none">Incorrect email format</i>
+                <input class="form-control" type="email" name="email" placeholder="Email"></div>
+            <div class="form-group">
+                <input class="form-control" minlength="6" type="password" name="password" placeholder="Password"></div>
             <div class="form-group">
                 <a class="btn btn-primary btn-block my-1 mt-2 w-100" type="submit" onclick="registerNewUser()">Sign up</a>
-                <a class="btn btn-primary btn-block my-1 fb w-100" type="submit">Sign in via Facebook account</a>
+                <a class="btn btn-primary btn-block my-1 fb w-100" type="submit" data-toggle="modal" data-target="#myModal">Sign in via Facebook account</a>
                 <a class="btn btn-primary btn-block my-1 gplus w-100" type="submit">Sign in via Google account</a>
             </div>
             <a class="forgot" href="#">Forgot your email or password?</a>
@@ -40,6 +60,7 @@
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/database.js"></script>
+    <script type="text/javascript" src="js/validator.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript">
         app.initialize();
